@@ -13,36 +13,34 @@ public class OptionMenu extends Account{
 
     Scanner menu_Input =new Scanner(System.in);
 
-    HashMap <String, String> data = new HashMap<>();
+    HashMap <Integer, Integer> data = new HashMap<>();
 
     public void getLogin() throws IOException{
         int x=1;
         do{
             try {
-                data.put("Chris Morries","2473684");
-                data.put("Mohamed Kaif","5674783");
-                data.put("Hendry","783568");
-                data.put("Rose","4738374");
-                data.put("Julie","9358734");
+                data.put(656747,556788);
+                data.put(663234,787698);
+                data.put(555556,783568);
+                
 
                 System.out.println("Enter Customer Name : ");
-                setCustomerName(menu_Input.nextLine());
+                setCustomerName(menu_Input.nextInt());
 
                 System.out.println("Enter a password : ");
-                setPassword(menu_Input.nextLine());
+                setPassword(menu_Input.nextInt());
 
             }catch (Exception e){
                 System.out.println("Invalid customer id or password ");
                 x=2;
             }
-            Set<Map.Entry<String ,String>> Data =data.entrySet();
-            for ( Map.Entry<String,String> entry : Data){
-
-                if (entry.getKey()== getCustomerName() && entry.getValue() ==getPassword()){
-                    getAccountType();
-                }
-            }
-            System.out.println("Wrong customer name or password ");
+           int  cn = getCustomerName();
+            int  pn = getPassword();
+            if (data.containsKey(cn) && data.get(cn) == pn) {
+                getAccountType();
+            }else
+                System.out.println("Invaild name or password");
+           
         }while (x == 1);
     }
     public void getAccountType(){
