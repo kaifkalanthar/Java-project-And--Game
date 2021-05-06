@@ -4,29 +4,29 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Account {
-        private String customerName;
-        private String password;
+        private int customerName;
+        private int  password;
         private double checkingBalance =0;
         private double savingBalance=0;
 
         Scanner input =new Scanner(System.in);
         DecimalFormat money_Format= new DecimalFormat("'$'###,##0.00");
 
-        public String setCustomerName(String customerName){
+        public int setCustomerName(int customerName){
             this.customerName=customerName;
             return customerName;
         }
 
-        public String getCustomerName(){
+        public int getCustomerName(){
             return customerName;
         }
 
-        public String setPassword(String password){
+        public int setPassword(int password){
             this.password=password;
             return password;
         }
 
-        public String getPassword(){
+        public int getPassword(){
             return password;
         }
 
